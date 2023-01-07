@@ -15,6 +15,12 @@ export type ObjectFieldProps = FieldSchema & DefaultProps & {
     properties: Fields,
 }
 
-export type Field = TextFieldProps | NumberFieldProps | ObjectFieldProps;
+export type SelectFieldProps = FieldSchema & {
+    label: string,
+    placeholder: string,
+    options: string[],
+}
+
+export type Field = TextFieldProps | NumberFieldProps | ObjectFieldProps | SelectFieldProps;
 
 export type Fields = Record<string, Field>

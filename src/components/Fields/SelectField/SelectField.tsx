@@ -1,5 +1,5 @@
 import {FormControl, FormLabel, Select} from "@chakra-ui/react";
-import {SelectFieldProps} from "../../../types/SelectProps";
+import {SelectFieldProps} from "../../../types/TextFieldProps";
 
 export function SelectField(props: SelectFieldProps & { name: string }) {
 
