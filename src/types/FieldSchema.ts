@@ -1,3 +1,3 @@
 export type FieldSchema = {
-    type: 'text' | 'number' | 'array' | 'object';
+    type: 'text' | 'number' | 'object' | 'select';
 }

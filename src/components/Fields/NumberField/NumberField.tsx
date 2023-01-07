@@ -1,19 +1,22 @@
-import {NumberFieldProps, TextFieldProps} from "../../../types/TextFieldProps";
+import {NumberFieldProps} from "../../../types/TextFieldProps";
+import {FormControl, FormLabel, Input} from "@chakra-ui/react";
 
 export function NumberField(props: NumberFieldProps & { name: string }) {
 
     const {label, name, placeholder, min, max} = props;
 
     return (
-        <div>
-            <label htmlFor={name}>{label}</label>
-            <input
+        <FormControl mb={5}>
+            <FormLabel>{label}</FormLabel>
+            <Input
                 id={name}
                 type='number'
+                variant='filled'
                 placeholder={placeholder}
                 min={min}
                 max={max}
             />
-        </div>
+            {/*<FormHelperText>We'll never share your email.</FormHelperText>*/}
+        </FormControl>
     );
 }

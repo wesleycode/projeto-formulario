@@ -1,6 +1,7 @@
 import {Fields} from "../../types/TextFieldProps";
 import {FormProvider, useForm} from "react-hook-form";
 import {renderFields} from "../../helpers/RenderFields";
+import {Box, Button, Flex} from "@chakra-ui/react";
 
 export interface FormProps {
     fields: Fields,
@@ -14,8 +15,12 @@ export function Formulario({fields}: FormProps) {
     return (
         <FormProvider {...form}>
             <form /*onSubmit={form.handleSubmit(onSubmit)}*/>
-                {Object.entries(fields).map(renderFields)}
-                <button type='submit'>Salvar</button>
+                <Flex flexDirection='column'>
+                    <Box padding='20px'>
+                        {Object.entries(fields).map((field) => (renderFields(field)))}
+                        <Button type='submit'>Salvar</Button>
+                    </Box>
+                </Flex>
             </form>
         </FormProvider>
     );

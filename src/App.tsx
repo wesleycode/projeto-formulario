@@ -1,42 +1,77 @@
 import React from 'react'
 import {FormProps, Formulario} from "./components/Formulario/Formulario";
+import {ChakraProvider} from "@chakra-ui/react";
 
 export function App() {
 
     const fields: FormProps['fields'] = {
-        name: {
+        firstName: {
             type: 'text',
-            label: 'Nome',
-            placeholder: 'Digite seu nome aqui'
+            label: 'Primeiro Nome',
+            placeholder: 'Entre com seu nome'
+        },
+        lastName: {
+            type: 'text',
+            label: 'Sobre Nome',
+            placeholder: 'Entre com seu sobrenome'
         },
         email: {
             type: 'text',
-            label: 'E-mail'
+            label: 'E-mail',
+            placeholder: 'E-mail'
         },
-        count: {
+        country: {
+            type: 'select',
+            label: 'Selecione seu país de origem',
+            placeholder: 'Selecione uma opção',
+            options: ['Opção 01', 'Opção 02', 'Opção 03',]
+        },
+        postalCode: {
             type: 'number',
-            label: 'Count',
-            placeholder: 'Coloque seu numero aqui'
+            label: 'Codigo-Postal',
+            placeholder: '000000-000'
         },
-        myObj: {
-            type: 'object',
-            label: 'My Object',
-            properties: {
-                mySubObject: {
-                    type: 'text',
-                    label: 'My Sub Object',
-                    placeholder: 'Esse é o meu sub objeto',
-                },
-                myOtherSubObject: {
-                    type: 'number',
-                    label: 'My Other Sub Object',
-                    placeholder: 'Esse é o meu sub sub objeto',
-                },
-            }
+        phone: {
+            type: 'text',
+            label: 'Telefone',
+            placeholder: '(00) 0 0000-0000'
         },
+        creditCard: {
+            type: 'text',
+            label: 'Numero do cartão de crédito',
+            placeholder: '0000-0000-0000-0000'
+        },
+        securityCode: {
+            type: 'text',
+            label: 'Codigo de segurança',
+            placeholder: '000'
+        },
+        // expirationDate: {
+        //     type: 'date',
+        //     label: 'Data de validade',
+        //     placeholder: 'MM / YY'
+        // },
+        // myObj: {
+        //     type: 'object',
+        //     label: 'My Object',
+        //     properties: {
+        //         mySubObject: {
+        //             type: 'text',
+        //             label: 'My Sub Object',
+        //             placeholder: 'Esse é o meu sub objeto',
+        //         },
+        //         myOtherSubObject: {
+        //             type: 'number',
+        //             label: 'My Other Sub Object',
+        //             placeholder: 'Esse é o meu sub sub objeto',
+        //         },
+        //     }
+        // },
     }
 
     return (
-        <Formulario fields={fields} />
+        <ChakraProvider>
+            <Formulario fields={fields}/>
+        </ChakraProvider>
     )
 }

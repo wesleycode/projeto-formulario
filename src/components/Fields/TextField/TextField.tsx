@@ -1,13 +1,15 @@
 import {TextFieldProps} from "../../../types/TextFieldProps";
+import {Box, FormControl, FormHelperText, FormLabel, Input, Text} from "@chakra-ui/react";
 
-export function TextField(props: TextFieldProps & {name: string}) {
+export function TextField(props: TextFieldProps & { name: string }) {
 
-    const { label, htmlType = 'text', name, placeholder} = props;
+    const {label, htmlType = 'text', name, placeholder} = props;
 
     return (
-        <div>
-            <label htmlFor={name}>{label}</label>
-            <input id={name} type={htmlType} placeholder={placeholder}></input>
-        </div>
+        <FormControl mb={5}>
+            <FormLabel>{label}</FormLabel>
+            <Input id={name} type={htmlType} variant='filled' placeholder={placeholder}/>
+            {/*<FormHelperText>We'll never share your email.</FormHelperText>*/}
+        </FormControl>
     );
 }
